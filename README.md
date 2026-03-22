@@ -1,4 +1,4 @@
-# @monasweata99/useglobalstore
+# global-use-state
 
 A drop-in global `useState`. No Provider. No store file. No config.
 
@@ -6,15 +6,15 @@ A drop-in global `useState`. No Provider. No store file. No config.
 const [user, setUser] = useGlobalState('user', null);
 ```
 
-[![npm](https://img.shields.io/npm/v/@monasweata99/useglobalstore)](https://www.npmjs.com/package/@monasweata99/useglobalstore)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@monasweata99/useglobalstore)](https://bundlephobia.com/package/@monasweata99/useglobalstore)
+[![npm](https://img.shields.io/npm/v/global-use-state)](https://www.npmjs.com/package/global-use-state)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/global-use-state)](https://bundlephobia.com/package/global-use-state)
 
 ---
 
 ## Install
 
 ```bash
-npm install @monasweata99/useglobalstore
+npm install global-use-state
 ```
 
 > **Peer dependency:** React 18+ (uses `useSyncExternalStore` under the hood)
@@ -24,7 +24,7 @@ npm install @monasweata99/useglobalstore
 ### Basic
 
 ```tsx
-import { useGlobalState } from '@monasweata99/useglobalstore';
+import { useGlobalState } from 'global-use-state';
 
 function Counter() {
   const [count, setCount] = useGlobalState('count', 0);
@@ -45,7 +45,7 @@ Augment the `GlobalState` interface once and get full type inference everywhere:
 
 ```ts
 // global.d.ts
-declare module '@monasweata99/useglobalstore' {
+declare module 'global-use-state' {
   interface GlobalState {
     user: User | null;
     theme: 'light' | 'dark';
@@ -64,7 +64,7 @@ const [theme, setTheme] = useGlobalState('theme', 'light');
 Read/write state from non-component code (event handlers, utils, etc.):
 
 ```ts
-import { getGlobalState, setGlobalState } from '@monasweata99/useglobalstore';
+import { getGlobalState, setGlobalState } from 'global-use-state';
 
 setGlobalState('theme', 'dark');
 console.log(getGlobalState('theme')); // 'dark'
