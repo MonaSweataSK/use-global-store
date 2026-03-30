@@ -19,6 +19,13 @@ npm install global-use-state
 
 > **Peer dependency:** React 18+ (uses `useSyncExternalStore` under the hood)
 
+## Why
+
+React's built-in `useState` is local to a component. Sharing state 
+across components without a global useState alternative forces you into 
+Context boilerplate or a full state management library. `global-use-state` 
+gives you a global useState with zero setup.
+
 ## Usage
 
 ### Basic

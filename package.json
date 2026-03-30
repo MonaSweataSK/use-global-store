@@ -55,9 +55,18 @@
     "state",
     "global-state",
     "useState",
-    "useSyncExternalStore"
+    "useSyncExternalStore",
+    "state-management",
+    "global",
+    "store",
+    "zustand-alternative",
+    "context-alternative",
+    "react-hooks",
+    "react-state",
+    "shared-state",
+    "no-provider"
   ],
-  "author": "Elaya",
+  "author": "MonaSweataSK",
   "license": "MIT",
   "repository": {
     "type": "git",
