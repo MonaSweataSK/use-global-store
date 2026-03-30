@@ -1,4 +1,5 @@
-import { useSyncExternalStore, useCallback, useRef } from 'react';
+import { useSyncExternalStore } from 'use-sync-external-store/shim';
+import { useCallback, useRef } from 'react';
 import {
   subscribe,
   getSnapshot,
@@ -36,15 +37,21 @@ export function useGlobalState(
   // Seed on first call — subsequent calls with different initialValue are no-ops
   initKey(key, initialValue);
 
+  const initialValueRef = useRef(initialValue);
+
   // Stable subscribe function scoped to this key
   const subscribeFn = useCallback(
     (cb: () => void) => subscribe(key, cb),
     [key],
   );
 
-  // Stable snapshot getters scoped to this key
-  const getSnapshotFn = useCallback(() => getSnapshot(key), [key]);
-  const getServerSnapshotFn = useCallback(() => getServerSnapshot(key) ?? initialValue, [key, initialValue]);
+  // Snapshot getter scoped to this key
+  const getSnapshotFn = () => getSnapshot(key);
+
+  // Server snapshot getter
+  const getServerSnapshotFn = useCallback(() => {
+    return getServerSnapshot(key) ?? initialValueRef.current;
+  }, [key]);
 
   const value = useSyncExternalStore(subscribeFn, getSnapshotFn, getServerSnapshotFn);
 

@@ -2,7 +2,7 @@
  * Declaration-merging interface. Users can augment this to get typed keys:
  *
  * ```ts
- * declare module 'useglobalstate' {
+ * declare module 'global-use-state' {
  *   interface GlobalState {
  *     theme: 'light' | 'dark';
  *   }

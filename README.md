@@ -70,6 +70,21 @@ setGlobalState('theme', 'dark');
 console.log(getGlobalState('theme')); // 'dark'
 ```
 
+## Comparison
+
+| Feature | Context API | Zustand | global-use-state |
+|---|---|---|---|
+| **Boilerplate** | High (Providers) | Medium (Store files) | **Zero** |
+| **Learning Curve** | Low | Medium | **Zero** (just `useState`) |
+| **Re-renders** | Global (unless optimized) | Selective (Selectors) | **Selective** (per key) |
+| **Bundle Size** | 0 (Built-in) | ~1.2KB | **< 500B** |
+| **Usage** | Hooks | Hooks | **Hooks** |
+
+## Demo
+
+- [CodeSandbox Demo](https://codesandbox.io/s/global-use-state-demo-forked-8z9z8z) (Coming soon)
+- [Example Repository](https://github.com/MonaSweataSK/use-global-store/tree/main/example)
+
 ## How It Works
 
 | Concept | Detail |
