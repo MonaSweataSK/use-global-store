@@ -1,6 +1,6 @@
 {
   "name": "global-use-state",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A drop-in global useState. No Provider. No store file. No config.",
   "type": "module",
   "main": "./dist/index.cjs",
