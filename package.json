@@ -67,6 +67,9 @@
     "no-provider"
   ],
   "author": "MonaSweataSK",
+  "contributors": [
+    { "name": "Elayaraman Ramalingam", "email": "elayaraman007@gmail.com" }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",

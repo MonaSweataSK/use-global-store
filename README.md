@@ -17,7 +17,7 @@ const [user, setUser] = useGlobalState('user', null);
 npm install global-use-state
 ```
 
-> **Peer dependency:** React 18+ (uses `useSyncExternalStore` under the hood)
+> **Peer dependency:** React 17+ (uses `useSyncExternalStore` shim for React 17, native API for React 18+)
 
 ## Why
 
@@ -98,8 +98,8 @@ console.log(getGlobalState('theme')); // 'dark'
 |---|---|
 | **Store** | Module-level `Map` — singleton per bundle |
 | **Subscriptions** | Per-key `Set<Listener>` — updating key `A` never re-renders subscribers of key `B` |
-| **Concurrent safety** | `useSyncExternalStore` prevents tearing under React 18 concurrent mode |
-| **SSR** | Server snapshot returns `undefined` — hydrates correctly on the client |
+| **Concurrent safety** | `useSyncExternalStore` prevents tearing under React 18+ concurrent mode |
+| **SSR** | Server snapshot returns `undefined`, ensuring safe hydration on the client |
 | **Initial value** | First caller for a key sets the value. Subsequent `initialValue` args are ignored |
 
 ## API
@@ -123,6 +123,11 @@ Write a value outside React. Triggers re-renders in all subscribed components.
 ## Bundle Size
 
 **< 500 bytes** gzipped. Zero dependencies beyond React.
+
+## Contributors
+
+- [MonaSweataSK](https://github.com/MonaSweataSK)
+- [Elayaraman](https://github.com/Elayaraman)
 
 ## License
 
