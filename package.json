@@ -68,7 +68,8 @@
   ],
   "author": "MonaSweataSK",
   "contributors": [
-    { "name": "Elayaraman Ramalingam", "email": "elayaraman007@gmail.com" }
+    { "name": "MonaSweataSK", "url": "https://github.com/MonaSweataSK" },
+    { "name": "Elayaraman Ramalingam", "email": "elayaraman007@gmail.com", "url": "https://github.com/Elayaraman" }
   ],
   "license": "MIT",
   "repository": {
